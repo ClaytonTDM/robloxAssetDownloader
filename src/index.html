@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" class="dark:bg-zinc-900">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../style.css" />
+		<title>Asset Downloader</title>
+		<script src="./preload.js"></script>
+	</head>
+	<body
+		class="flex justify-center items-center bg-zinc-100 dark:bg-zinc-900 min-h-screen"
+	>
+		<div
+			id="loader"
+			class="z-50 fixed inset-0 flex justify-center items-center hidden bg-black/50 dark:bg-black/70 backdrop-blur-sm"
+		>
+			<svg
+				class="text-blue-500 dark:text-blue-400 animate-spin"
+				xmlns="http://www.w3.org/2000/svg"
+				width="64"
+				height="64"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+			>
+				<path d="M12 3a9 9 0 1 0 9 9"></path>
+			</svg>
+		</div>
+		<div class="bg-white dark:bg-zinc-800 shadow-md p-8 rounded-lg w-96">
+			<h1
+				class="mb-6 font-semibold text-2xl text-center text-zinc-900 dark:text-white"
+			>
+				Asset Downloader
+			</h1>
+			<div class="space-y-4">
+				<div>
+					<label
+						for="cookie"
+						class="block font-medium text-sm text-zinc-700 dark:text-zinc-200"
+						>Roblox Cookie</label
+					>
+					<input
+						type="password"
+						id="cookie"
+						placeholder="Needed for private audio & game assets"
+						class="block border-zinc-300 dark:border-zinc-600 bg-white dark:bg-zinc-700 shadow-sm mt-1 p-2 border focus:border-blue-500 rounded-md focus:ring-blue-500 w-full dark:text-white"
+					/>
+				</div>
+				<div>
+					<label
+						for="placeId"
+						class="block font-medium text-sm text-zinc-700 dark:text-zinc-200"
+						>Place ID</label
+					>
+					<input
+						type="text"
+						id="placeId"
+						placeholder="Needed for private audio"
+						class="block border-zinc-300 dark:border-zinc-600 bg-white dark:bg-zinc-700 shadow-sm mt-1 p-2 border focus:border-blue-500 rounded-md focus:ring-blue-500 w-full dark:text-white"
+					/>
+				</div>
+				<div>
+					<label
+						for="assetId"
+						class="block font-medium text-sm text-zinc-700 dark:text-zinc-200"
+						>Asset ID</label
+					>
+					<input
+						type="text"
+						id="assetId"
+						class="block border-zinc-300 dark:border-zinc-600 bg-white dark:bg-zinc-700 shadow-sm mt-1 p-2 border focus:border-blue-500 rounded-md focus:ring-blue-500 w-full dark:text-white"
+					/>
+				</div>
+				<button
+					id="download"
+					class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-zinc-800 w-full text-white transition-all focus:outline-none"
+				>
+					Download
+				</button>
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
