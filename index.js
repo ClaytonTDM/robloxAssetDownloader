@@ -1,17 +1,16 @@
-// electron hello world
 const { app, BrowserWindow, Menu, ipcMain } = require("electron");
 const fs = require("fs");
 const path = require("path");
 const stream = require("stream");
 const { promisify } = require("util");
-const FileType = require("file-type"); // Changed to capital F
+const FileType = require("file-type");
 
 const pipeline = promisify(stream.pipeline);
 
 let mainWindow;
 
 app.on("ready", () => {
-	//Menu.setApplicationMenu(null);
+	Menu.setApplicationMenu(null);
 
 	mainWindow = new BrowserWindow({
 		width: 800,
