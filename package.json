@@ -1,19 +1,86 @@
 {
-  "name": "privateassetdownloader",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "electron": "^33.1.0",
-    "tailwindcss": "^3.4.14"
-  },
-  "dependencies": {
-    "file-type": "16.5.4"
-  }
+	"name": "privateassetdownloader",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"start": "electron .",
+		"test": "echo \"Error: no test specified\" && exit 1",
+    "package-win": "electron-packager . --platform-windows --arch=x64",
+    "package-linux": "electron-packager . --platform=linux --arch=x64",
+    "package-mac": "electron-packager . --platform=darwin --arch=x64",
+    "dist": "electron-builder -p never",
+    "release": "electron-builder -p always"
+	},
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"devDependencies": {
+		"electron": "^33.1.0",
+		"tailwindcss": "^3.4.14"
+	},
+	"dependencies": {
+		"file-type": "16.5.4"
+	},
+	"build": {
+		"appId": "privateAssetDownloader",
+		"productName": "privateAssetDownloader",
+		"directories": {
+			"output": "dist"
+		},
+		"win": {
+			"target": [
+				{
+					"target": "nsis",
+					"arch": [
+						"x64",
+						"ia32",
+						"arm64"
+					]
+				}
+			],
+			"publish": [
+				"github"
+			]
+		},
+		"linux": {
+			"target": [
+				{
+					"target": "AppImage",
+					"arch": [
+						"x64",
+						"arm64",
+						"armv7l"
+					]
+				},
+				{
+					"target": "deb",
+					"arch": [
+						"x64",
+						"arm64",
+						"armv7l"
+					]
+				},
+				{
+					"target": "rpm",
+					"arch": [
+						"x64",
+						"arm64",
+						"armv7l"
+					]
+				}
+			],
+			"publish": [
+				"github"
+			],
+			"category": "Utility"
+		},
+		"mac": {
+			"target": "dmg",
+			"publish": [
+				"github"
+			],
+			"category": "public.app-category.utilities",
+			"darkModeSupport": true
+		}
+	}
 }
