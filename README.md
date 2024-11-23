@@ -1,3 +1,5 @@
+# [**[EXE Download Link]**](https://github.com/ClaytonTDM/robloxAssetDownloader/releases/download/1.1/privateAssetDownloader.Setup.1.1.0.exe)
+
 # Roblox Asset Downloader
 
 A desktop application built with Electron that allows you to download Roblox assets, including private audio files and game assets.
