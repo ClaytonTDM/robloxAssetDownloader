@@ -10,12 +10,12 @@ const pipeline = promisify(stream.pipeline);
 let mainWindow;
 
 app.on("ready", () => {
-	/// Menu.setApplicationMenu(null);
+	Menu.setApplicationMenu(null);
 
 	mainWindow = new BrowserWindow({
 		width: 800,
 		height: 600,
-		// autoHideMenuBar: false,
+		// autoHideMenuBar: true,
 		webPreferences: {
 			nodeIntegration: false,
 			contextIsolation: true,
