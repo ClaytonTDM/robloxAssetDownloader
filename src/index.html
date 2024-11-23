@@ -29,57 +29,141 @@
 				<path d="M12 3a9 9 0 1 0 9 9"></path>
 			</svg>
 		</div>
-		<div class="bg-white dark:bg-zinc-800 shadow-md p-8 rounded-lg w-96">
-			<h1
-				class="mb-6 font-semibold text-2xl text-center text-zinc-900 dark:text-white"
-			>
-				Asset Downloader
-			</h1>
-			<div class="space-y-4">
-				<div>
-					<label
-						for="cookie"
-						class="block font-medium text-sm text-zinc-700 dark:text-zinc-200"
-						>Roblox Cookie</label
-					>
-					<input
-						type="password"
-						id="cookie"
-						placeholder="Needed for private audio & game assets"
-						class="block border-zinc-300 dark:border-zinc-600 bg-white dark:bg-zinc-700 shadow-sm mt-1 p-2 border focus:border-blue-500 rounded-md focus:ring-blue-500 w-full dark:text-white"
-					/>
-				</div>
-				<div>
-					<label
-						for="placeId"
-						class="block font-medium text-sm text-zinc-700 dark:text-zinc-200"
-						>Place ID</label
-					>
-					<input
-						type="text"
-						id="placeId"
-						placeholder="Needed for private audio"
-						class="block border-zinc-300 dark:border-zinc-600 bg-white dark:bg-zinc-700 shadow-sm mt-1 p-2 border focus:border-blue-500 rounded-md focus:ring-blue-500 w-full dark:text-white"
-					/>
-				</div>
-				<div>
-					<label
-						for="assetId"
-						class="block font-medium text-sm text-zinc-700 dark:text-zinc-200"
-						>Asset ID</label
-					>
-					<input
-						type="text"
-						id="assetId"
-						class="block border-zinc-300 dark:border-zinc-600 bg-white dark:bg-zinc-700 shadow-sm mt-1 p-2 border focus:border-blue-500 rounded-md focus:ring-blue-500 w-full dark:text-white"
-					/>
-				</div>
-				<button
-					id="download"
-					class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-zinc-800 w-full text-white transition-all focus:outline-none"
+		<div class="bg-white dark:bg-zinc-800 shadow-md rounded-lg w-96">
+			<div class="flex w-full h-12">
+				<div
+					class="bg-zinc-950 bg-opacity-25 rounded-tl-lg w-1/2 h-full cursor-pointer"
+					id="individualDownload"
 				>
-					Download
-				</button>
+					<div class="flex justify-center items-center w-full h-full">
+						<span
+							class="font-semibold text-sm text-white select-none"
+						>
+							Individual Download
+						</span>
+					</div>
+					<div class="bg-blue-500 dark:bg-blue-400 -mt-1 w-full h-1"></div>
+				</div>
+				<div
+					class="bg-zinc-950 bg-opacity-25 rounded-tr-lg w-1/2 h-full cursor-pointer"
+					id="bulkDownload"
+				>
+					<div class="flex justify-center items-center w-full h-full">
+						<span
+							class="font-semibold text-sm text-white select-none"
+						>
+							Bulk Download
+						</span>
+					</div>
+					<div
+						class="bg-zinc-500 dark:bg-zinc-600 -mt-1 w-full h-1"
+					></div>
+				</div>
+			</div>
+			<div class="p-8 pt-6" id="individualPage">
+				<h1
+					class="mb-6 font-semibold text-2xl text-center text-zinc-900 dark:text-white select-none"
+				>
+					Asset Downloader
+				</h1>
+				<div class="space-y-4">
+					<div>
+						<label
+							for="cookie"
+							class="block font-medium text-sm text-zinc-700 dark:text-zinc-200 select-none"
+							>Roblox Cookie</label
+						>
+						<input
+							type="password"
+							id="cookie"
+							placeholder="Needed for private audio & game assets"
+							class="block border-zinc-300 dark:border-zinc-600 bg-white dark:bg-zinc-700 shadow-sm mt-1 p-2 border focus:border-blue-500 rounded-md focus:ring-blue-500 w-full dark:text-white"
+						/>
+					</div>
+					<div>
+						<label
+							for="placeId"
+							class="block font-medium text-sm text-zinc-700 dark:text-zinc-200 select-none"
+							>Place ID</label
+						>
+						<input
+							type="text"
+							id="placeId"
+							placeholder="Needed for private audio"
+							class="block border-zinc-300 dark:border-zinc-600 bg-white dark:bg-zinc-700 shadow-sm mt-1 p-2 border focus:border-blue-500 rounded-md focus:ring-blue-500 w-full dark:text-white"
+						/>
+					</div>
+					<div>
+						<label
+							for="assetId"
+							class="block font-medium text-sm text-zinc-700 dark:text-zinc-200 select-none"
+							>Asset ID</label
+						>
+						<input
+							type="text"
+							id="assetId"
+							class="block border-zinc-300 dark:border-zinc-600 bg-white dark:bg-zinc-700 shadow-sm mt-1 p-2 border focus:border-blue-500 rounded-md focus:ring-blue-500 w-full dark:text-white"
+						/>
+					</div>
+					<button
+						id="download"
+						class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-zinc-800 w-full text-white transition-all focus:outline-none"
+					>
+						Download
+					</button>
+				</div>
+			</div>
+			<div class="hidden p-8 pt-6" id="bulkPage">
+				<h1
+					class="mb-6 font-semibold text-2xl text-center text-zinc-900 dark:text-white select-none"
+				>
+					Bulk Asset Downloader
+				</h1>
+				<div class="space-y-4">
+					<div>
+						<label
+							for="cookie2"
+							class="block font-medium text-sm text-zinc-700 dark:text-zinc-200 select-none"
+							>Roblox Cookie</label
+						>
+						<input
+							type="password"
+							id="cookie2"
+							placeholder="Needed for private audio & game assets"
+							class="block border-zinc-300 dark:border-zinc-600 bg-white dark:bg-zinc-700 shadow-sm mt-1 p-2 border focus:border-blue-500 rounded-md focus:ring-blue-500 w-full dark:text-white"
+						/>
+					</div>
+					<div>
+						<label
+							for="placeIds"
+							class="block font-medium text-sm text-zinc-700 dark:text-zinc-200 select-none"
+							>Place IDs</label
+						>
+						<textarea
+							id="placeIds"
+							placeholder="New line separated"
+							class="block border-zinc-300 dark:border-zinc-600 bg-white dark:bg-zinc-700 shadow-sm mt-1 p-2 border focus:border-blue-500 rounded-md focus:ring-blue-500 w-full dark:text-white"
+						></textarea>
+					</div>
+					<div>
+						<label
+							for="assetIds"
+							class="block font-medium text-sm text-zinc-700 dark:text-zinc-200 select-none"
+							>Asset IDs</label
+						>
+						<textarea
+							id="assetIds"
+							placeholder="New line separated"
+							class="block border-zinc-300 dark:border-zinc-600 bg-white dark:bg-zinc-700 shadow-sm mt-1 p-2 border focus:border-blue-500 rounded-md focus:ring-blue-500 w-full dark:text-white"
+						></textarea>
+					</div>
+					<button
+						id="downloadBulk"
+						class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-zinc-800 w-full text-white transition-all focus:outline-none"
+					>
+						Download
+					</button>
+				</div>
 			</div>
 		</div>
 		<script src="script.js"></script>

@@ -10,12 +10,12 @@ const pipeline = promisify(stream.pipeline);
 let mainWindow;
 
 app.on("ready", () => {
-	Menu.setApplicationMenu(null);
+	/// Menu.setApplicationMenu(null);
 
 	mainWindow = new BrowserWindow({
 		width: 800,
 		height: 600,
-		autoHideMenuBar: false,
+		// autoHideMenuBar: false,
 		webPreferences: {
 			nodeIntegration: false,
 			contextIsolation: true,
@@ -30,6 +30,7 @@ app.on("ready", () => {
 ipcMain.handle(
 	"download-request",
 	async (event, { url, userAgent, robloSecurity, robloxPlaceId }) => {
+		console.log("Download request:", url);
 		try {
 			const downloadsPath = app.getPath("downloads");
 			const assetId = url.split("/").pop().split("=")[1];
