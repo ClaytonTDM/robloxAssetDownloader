@@ -1,4 +1,4 @@
-# [**[EXE Download Link]**](https://github.com/ClaytonTDM/robloxAssetDownloader/releases/download/1.1.1/privateAssetDownloader.Setup.1.1.1.exe)
+# [**[EXE Download Link]**](https://github.com/ClaytonTDM/robloxAssetDownloader/releases/download/1.1.1/privateAssetDownloader.Setup.1.1.2.exe)
 
 # Roblox Asset Downloader
 
