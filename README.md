@@ -59,7 +59,7 @@ npm start
 - Q: How do I install this?
 - A: [Download the EXE](https://github.com/ClaytonTDM/robloxAssetDownloader/releases/download/1.1.2/privateAssetDownloader.Setup.1.1.2.exe), or if you're on MacOS/Linux, refer to the [Installation steps](#installation).
 - Q: Can I sell this?
-- A: **No.** It is prohibited by the Commons Clause in the [LICENSE](license) file.
+- A: **No.** It is prohibited by the Commons Clause in the [LICENSE](LICENSE) file.
 - Q: Does this break Roblox TOS?
 - A: No. This uses official Roblox APIs according to the TOS.
 - Q: What can this download?
