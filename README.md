@@ -53,3 +53,14 @@ npm start
 - Uses Roblox API to fetch asset information
 - Uses Tailwind CSS for styling
 - Includes file type detection using `file-type` package and custom logic for Roblox-specific assets thanks to [RobloxAPI's helpful spec](https://github.com/RobloxAPI/spec/blob/master/formats/rbxl.md)
+
+## FAQ
+
+- Q: How do I install this?
+- A: [Download the EXE](https://github.com/ClaytonTDM/robloxAssetDownloader/releases/download/1.1.2/privateAssetDownloader.Setup.1.1.2.exe), or if you're on MacOS/Linux, refer to the [Installation steps](#installation).
+- Q: Can I sell this?
+- A: **No.** It is prohibited by the Commons Clause in the [LICENSE](license) file.
+- Q: Does this break Roblox TOS?
+- A: No. This uses official Roblox APIs according to the TOS.
+- Q: What can this download?
+- A: Models, animations, audio, etc. You name it and my tool can probably download it.
