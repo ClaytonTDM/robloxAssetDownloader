@@ -32,7 +32,7 @@ ipcMain.handle(
 	async (event, { url, userAgent, robloSecurity, robloxPlaceId }) => {
 		console.log("Download request:", url);
 		try {
-			const downloadsPath = app.getPath("downloads");
+			let downloadsPath = path.join(__dirname, "DownloadedAssets");
 			const assetId = url.split("/").pop().split("=")[1];
 
 			const timeout = new Promise((_, reject) =>
@@ -78,7 +78,16 @@ ipcMain.handle(
 					const type = await FileType.fromBuffer(buffer);
 					extension = type ? type.ext : "bin";
 				}
+				if (robloxPlaceId){
+					if (!fs.existsSync(`./DownloadedAssets/${robloxPlaceId}`)) { 
+						fs.mkdirSync(`./DownloadedAssets/${robloxPlaceId}`); 
+						console.log(`Folder ${robloxPlaceId} created successfully.`); 
+					} 
+					else { console.log(`Folder ${robloxPlaceId} already exists.`); 
 
+					}
+					downloadsPath = `./DownloadedAssets/${robloxPlaceId}`;
+				}
 				const filePath = path.join(
 					downloadsPath,
 					`${assetId}.${extension}`
@@ -86,7 +95,6 @@ ipcMain.handle(
 				await fs.promises.writeFile(filePath, buffer);
 				return filePath;
 			};
-
 			return await Promise.race([downloadProcess(), timeout]);
 		} catch (error) {
 			console.error("Download error:", error);
