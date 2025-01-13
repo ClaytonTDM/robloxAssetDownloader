@@ -40,7 +40,7 @@ npm start
 
 1. Launch the application
 2. Fill in the required fields:
-   - **Roblox Cookie** (Optional): Your .ROBLONECURITY cookie (required for private assets)
+   - **Roblox Cookie** (Optional): Your .ROBLOSECURITY cookie (required for private assets)
    - **Place ID** (Optional): The ID of the game you want to download assets from (required for private assets)
    - **Asset ID**: The ID of the asset you want to download
 
